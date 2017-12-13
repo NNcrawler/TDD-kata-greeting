@@ -30,6 +30,7 @@ describe('Index', () => {
     it('Should return "Hello, Amy, Brian, and Charlotte." when inputed with array more than 2', () => {
       const greeting = index.greet(["Amy", "Brian", "Charlotte"]);
       expect(greeting).toEqual("Hello, Amy, Brian, and Charlotte.");
-    })
+    });
+
   })
 })

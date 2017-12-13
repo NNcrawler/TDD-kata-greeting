@@ -1,18 +1,40 @@
-function greet(name) {
-  const otherPerson = name || 'my friend';
+function isNoNameInputed(name) {
+  return !name
+}
 
-  let greeting = `Hello, ${otherPerson}.`;
-  typeof name === 'string' && name === name.toUpperCase() &&
-    (greeting = `HELLO, ${name}.`);
-  Array.isArray(name) && name.length === 2 &&
-    (greeting = `Hello, ${name[0]} and ${name[1]}.`);
-  Array.isArray(name) && name.length > 2 &&
-    (greeting = `Hello, ${name.reduce( (sum, curr, i) => {
+function isUpperCase(name) {
+  return typeof name === 'string' && name === name.toUpperCase() ? true : false;
+}
+
+function isTwoNames(name) {
+  return Array.isArray(name) && name.length === 2;
+}
+
+function isGTTwoNames(name) {
+  return Array.isArray(name) && name.length > 2;
+}
+
+function greet(name) {
+  const greeting = "Hello,";
+
+  if (isNoNameInputed(name)) {
+    return `${greeting} my friend.`;
+
+  } else if (isUpperCase(name)) {
+    return `HELLO, ${name}.`;
+
+  } else if (isTwoNames(name)) {
+    return `${greeting} ${name[0]} and ${name[1]}.`;
+
+  } else if (isGTTwoNames(name)) {
+    return `${greeting} ${name.reduce( (sum, curr, i) => {
       return i === name.length - 1 ? `${sum}, and ${name[i]}.` :
         `${sum}, ${curr}`;
-    })}`);
+    })}`;
 
-  return greeting;
+  }
+
+  return `${greeting} ${name}.`
 }
 
 module.exports = {
