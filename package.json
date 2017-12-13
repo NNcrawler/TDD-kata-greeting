@@ -1,0 +1,16 @@
+{
+  "name": "TDD-kata-greeting",
+  "version": "1.0.0",
+  "description": "TDD practice",
+  "main": "index.js",
+  "repository": "https://github.com/NNcrawler/TDD-kata-greeting",
+  "author": "NNcrawler <rasyid.xyz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^21.2.1"
+  },
+  "scripts": {
+    "test": "jest --watch"
+  }
+}
