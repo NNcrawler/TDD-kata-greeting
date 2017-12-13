@@ -20,6 +20,11 @@ describe('Index', () => {
     it('Should return Shout(uppercase) when inputed name is uppercase', () => {
       const greeting = index.greet('JERRY');
       expect(greeting).toEqual('HELLO, JERRY.');
-    })
+    });
+
+    it('Should return "Hello, Jill and Jane." when inputed with array contain 2 names', () => {
+      const greeting = index.greet(['Jill', 'Jane']);
+      expect(greeting).toEqual('Hello, Jill and Jane.');
+    });
   })
 })
