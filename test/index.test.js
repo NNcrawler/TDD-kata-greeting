@@ -35,6 +35,11 @@ describe('Index', () => {
     it('Should return "Hello, Amy and Charlotte. AND HELLO BRIAN!" when inputed with ["Amy", "BRIAN", "Charlotte"]', () => {
       const greeting = index.greet(["Amy", "BRIAN", "Charlotte"]);
       expect(greeting).toEqual('Hello, Amy and Charlotte. AND HELLO BRIAN!');
+    });
+
+    it('Should return "Hello, Amy, Brian, and Charlotte." when inputed with "Bob, Charlie, Dianne".', () => {
+      const greeting = index.greet('Bob, Charlie, Dianne');
+      expect(greeting).toEqual('Hello, Bob, Charlie, and Dianne.');
     })
   })
 })

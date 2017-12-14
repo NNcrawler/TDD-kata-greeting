@@ -14,8 +14,18 @@ function isGTTwoNames(name) {
   return Array.isArray(name) && name.length > 2;
 }
 
-function greet(name) {
+function namePreProcessor(name) {
+  if (typeof name === 'string') {
+    const names = name.split(', ');
+    return names.length > 1 ? names : names[0];
+  }
+  return name;
+}
+
+function greet(nameInputed) {
   const greeting = "Hello,";
+
+  const name = namePreProcessor(nameInputed);
 
   if (isNoNameInputed(name)) {
     return `${greeting} my friend.`;
